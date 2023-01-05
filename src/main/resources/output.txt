@@ -1,0 +1,5 @@
+Receipt:
+Product 1 x7 $2.00 = $12.60 with discount
+Product 2 x3 $2.00 = $6.00
+Total: $13.02
+Discount card: card-1234 percent 30%

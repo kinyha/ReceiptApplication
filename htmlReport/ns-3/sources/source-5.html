@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Receipt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">by.bratchykau.receipt.model</a>
+</div>
+
+<h1>Coverage Summary for Class: Receipt (by.bratchykau.receipt.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Receipt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (4/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    70%
+  </span>
+  <span class="absValue">
+    (7/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package by.bratchykau.receipt.model;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class Receipt {
+&nbsp;    private List&lt;Product&gt; products;
+&nbsp;    private Byn totalAmount;
+&nbsp;    private DiscountCard discountCard;
+&nbsp;
+<b class="fc">&nbsp;    public Receipt(List&lt;Product&gt; products, Byn totalAmount, DiscountCard discountCard) {</b>
+<b class="fc">&nbsp;        this.products = products;</b>
+<b class="fc">&nbsp;        this.totalAmount = totalAmount;</b>
+<b class="fc">&nbsp;        this.discountCard = discountCard;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Product&gt; getProducts() {
+<b class="fc">&nbsp;        return products;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Byn getTotalAmount() {
+<b class="fc">&nbsp;        return totalAmount;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public DiscountCard getDiscountCard() {
+<b class="fc">&nbsp;        return discountCard;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setProducts(List&lt;Product&gt; products) {
+<b class="nc">&nbsp;        this.products = products;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setTotalAmount(Byn totalAmount) {
+<b class="nc">&nbsp;        this.totalAmount = totalAmount;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDiscountCard(DiscountCard discountCard) {
+<b class="nc">&nbsp;        this.discountCard = discountCard;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-01-05 18:01</div>
+</div>
+</body>
+</html>
