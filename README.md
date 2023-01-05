@@ -26,9 +26,10 @@ In the example you provided, the URL makes a request to the `/check` endpoint wi
 
 The output of the request will be a string in the following format:
 
-`Receipt: 
-Product 3 x7 $3.33 = $20.97 with discount 
-Product 2 x3 $2.00 = $6.00 Total: $18.87 
-Discount card: card-1234 percent 30%`
+`Receipt:`
+`Product 3 x7 $3.33 = $20.97 with discount 
+`Product 2 x3 $2.00 = $6.00 
+`Total: $18.87 
+`Discount card: card-1234 percent 30%`
 
 And create file output.txt
