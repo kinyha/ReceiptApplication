@@ -1,0 +1,2 @@
+# ReceiptApplication
+ Clevertec ReceiptApp
