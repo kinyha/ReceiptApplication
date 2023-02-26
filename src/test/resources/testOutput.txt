@@ -1,0 +1,5 @@
+Receipt:
+Product 1 x1 $1.00 = $1.00
+Product 2 x2 $2.00 = $4.00
+Total: $4.50
+Discount card: card-1 percent 10%

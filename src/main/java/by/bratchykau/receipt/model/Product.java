@@ -1,9 +1,7 @@
 package by.bratchykau.receipt.model;
 
 
-
 import by.bratchykau.receipt.exceptions.NonpositiveArgumentException;
-import by.bratchykau.receipt.utils.Constants;
 
 import javax.persistence.*;
 
@@ -29,10 +27,10 @@ public class Product {
 
     public Product(int id, String name, int price) {
         if (price <= 0) {
-            throw new NonpositiveArgumentException(Constants.WRONG_VALUE, price);
+            throw new NonpositiveArgumentException("Wrong argument for value: ", price);
         }
         if (name.trim().isEmpty()) {
-            throw new IllegalArgumentException(Constants.NAME_EMPTY);
+            throw new IllegalArgumentException("Name is empty");
         }
         this.id = id;
         this.name = name;

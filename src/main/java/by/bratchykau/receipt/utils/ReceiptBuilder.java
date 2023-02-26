@@ -23,21 +23,6 @@ public class ReceiptBuilder {
     }
 
     public Receipt build() {
-        int totalAmount = 0;
-
-        // Calculate total amount of the receipt
-        for (Product product : products) {
-            if (product.getQuantity() > 5) {         // Apply 10% discount on items with a quantity of more than five
-                totalAmount += (product.getPrice() * product.getQuantity() * 0.9);
-            } else {
-                totalAmount += product.getPrice() * product.getQuantity();
-            }
-        }
-
-//         Apply discount on the presented card (if there is one)
-            if (discountCard != null) {
-                totalAmount = (totalAmount  * (100 - discountCard.getDiscountPercentage())) / 100;
-            }
-        return new Receipt(products, totalAmount, discountCard);
+        return new Receipt(products, discountCard);
     }
 }

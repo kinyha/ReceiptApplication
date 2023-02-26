@@ -7,10 +7,10 @@ public class Receipt {
     private int totalAmount;
     private DiscountCard discountCard;
 
-    public Receipt(List<Product> products, int totalAmount, DiscountCard discountCard) {
+    public Receipt(List<Product> products, DiscountCard discountCard) {
         this.products = products;
-        this.totalAmount = totalAmount;
         this.discountCard = discountCard;
+        this.totalAmount = findTotalAmount();
     }
 
     public List<Product> getProducts() {
@@ -37,6 +37,21 @@ public class Receipt {
         this.discountCard = discountCard;
     }
 
+    public int findTotalAmount() {
+        int amount = 0;
+        for (Product product : products) {
+            int price = product.getPrice() * product.getQuantity();
+            if (product.getQuantity() > 5) {
+                price = (int) (price * 0.9);
+            }
+            amount += price;
+        }
+        if (discountCard != null) {
+            amount = (amount * (100 - discountCard.getDiscountPercentage())) / 100;
+        }
+        return amount;
+    }
+
     @Override
     public String toString() {
         return createString();
@@ -44,39 +59,33 @@ public class Receipt {
 
     private String createString() {
         StringBuilder sb = new StringBuilder();
-        int amount = 0;
-        sb.append("Receipt:");
-        for (Product product:products) {
-            if (product.getQuantity() <= 5) {
-                sb.append("\n");
+        sb.append("Receipt:\n");
+
+        for (Product product : products) {
+            int price = product.getPrice() * product.getQuantity();
+            if (product.getQuantity() > 5) {
+                price = (int) (price * 0.9);
                 sb.append(product.getName()).append(" x").append(product.getQuantity()).append(" $")
-                        .append(convert(product.getPrice())).append(" = $")
-                        .append(convert(product.getPrice() * product.getQuantity()));
-                amount += product.getQuantity() * product.getPrice();
+                        .append(convert(product.getPrice())).append(" = $").append(convert(price))
+                        .append(" with discount\n");
             } else {
-                sb.append("\n");
                 sb.append(product.getName()).append(" x").append(product.getQuantity()).append(" $")
-                        .append(convert(product.getPrice())).append(" = $")
-                        .append(convert((product.getPrice() * product.getQuantity() * 90) / 100))
-                        .append(" with discount");
-                amount += (product.getPrice() * product.getQuantity() * 90) / 100;
+                        .append(convert(product.getPrice())).append(" = $").append(convert(price)).append("\n");
             }
         }
-        sb.append("\n");
+
+        sb.append("Total: $").append(convert(totalAmount)).append("\n");
+
         if (discountCard != null) {
-            sb.append("Total: $" + convert(totalAmount));
-        } else {
-            sb.append("Total: $" + convert(amount));
+            sb.append("Discount card: ").append(discountCard.getNumber())
+                    .append(" percent ").append(discountCard.getDiscountPercentage()).append("%\n");
         }
-        sb.append("\n");
-        if (discountCard != null) {
-            sb.append("Discount card: " + discountCard.getNumber() + " percent " + discountCard.getDiscountPercentage() + "%");
-            sb.append("\n");
-        }
+
         return sb.toString();
     }
 
+
     private static String convert(int value) {
-        return String.format("%d.%02d", value/100, value % 100);
+        return String.format("%d.%02d", value / 100, value % 100);
     }
 }

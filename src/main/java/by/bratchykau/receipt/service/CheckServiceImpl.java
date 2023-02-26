@@ -1,6 +1,5 @@
 package by.bratchykau.receipt.service;
 
-import by.bratchykau.receipt.exceptions.LineException;
 import by.bratchykau.receipt.model.DiscountCard;
 import by.bratchykau.receipt.model.Product;
 import by.bratchykau.receipt.model.Receipt;
@@ -9,8 +8,6 @@ import by.bratchykau.receipt.repositories.ProductRepository;
 import by.bratchykau.receipt.utils.ReceiptBuilder;
 import by.bratchykau.receipt.utils.ReceiptDecorator;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CheckServiceImpl implements CheckService {
@@ -45,7 +42,7 @@ public class CheckServiceImpl implements CheckService {
         }
 
         if (discountCard != null) {
-            if (discountCard.startsWith("card-")) {
+            if (discountCard.startsWith("card")) {
                 card = discountCardRepository.findByNumber(discountCard);
             }
         }
