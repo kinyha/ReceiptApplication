@@ -30,7 +30,7 @@ public class CheckServiceImplTest {
     }
 
     @Test
-    public void testGetCheck() {
+    public void checkGetCheck() {
         String[] itemIdsAndQuantities = {"1-1"};
         String discountCard = "card-123";
         String check = checkService.getCheck(itemIdsAndQuantities, discountCard);
@@ -42,7 +42,7 @@ public class CheckServiceImplTest {
     }
 
     @Test
-    public void testGetCheckWithoutDiscountCard() {
+    public void checkGetCheckWithoutDiscountCard() {
         String[] itemIdsAndQuantities = {"1-2", "2-3"};
         String discountCard = null;
         String check = checkService.getCheck(itemIdsAndQuantities, discountCard);
@@ -54,7 +54,7 @@ public class CheckServiceImplTest {
     }
 
     @Test
-    public void testGetCheckWithInvalidDiscountCard() {
+    public void checkGetCheckWithInvalidDiscountCard() {
         String[] itemIdsAndQuantities = {"1-2", "2-3"};
         String discountCard = "invalid-card";
         String check = checkService.getCheck(itemIdsAndQuantities, discountCard);
@@ -66,7 +66,7 @@ public class CheckServiceImplTest {
     }
 
     @Test
-    public void testGetCheckWithDifferentDiscountPercentages() {
+    public void checkGetCheckWithDifferentDiscountPercentages() {
         String[] itemIdsAndQuantities = {"1-2", "2-3"};
         String discountCard = "card-123";
         String check = checkService.getCheck(itemIdsAndQuantities, discountCard);
@@ -90,7 +90,7 @@ public class CheckServiceImplTest {
     }
 
     @Test
-    public void testGetCheckWithEmptyList() {
+    public void checkGetCheckWithEmptyList() {
         String[] itemIdsAndQuantities = {};
         String discountCard = "card-123";
         String check = checkService.getCheck(itemIdsAndQuantities, discountCard);

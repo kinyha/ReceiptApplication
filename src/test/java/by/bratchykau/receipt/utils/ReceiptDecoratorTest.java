@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ReceiptDecoratorTest {
 
     @Test
-    void CheckOutputToFile() {
+    void checkOutputToFile() {
         Receipt receipt = new Receipt(
                 List.of(new Product(1, "Product 1", 100,1),
                         new Product(2, "Product 2", 200,2)),

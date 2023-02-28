@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 public class ReceiptTest {
     @Test
-    public void testToString() {
+    public void checkToString() {
         Product product1 = new Product(1, "Product 1", 200);
         product1.setQuantity(5);
         Product product2 = new Product(2, "Product 2", 200);
@@ -28,7 +28,7 @@ public class ReceiptTest {
     }
 
     @Test
-    void testFindTotalAmountWithoutDiscountCard() {
+    void checkFindTotalAmountWithoutDiscountCard() {
         List<Product> products = List.of(
                 new Product(1, "Product 1", 100, 2),
                 new Product(2, "Product 2", 200, 3)
@@ -40,7 +40,7 @@ public class ReceiptTest {
     }
 
     @Test
-    void testFindTotalAmountWithDiscountCard() {
+    void checkFindTotalAmountWithDiscountCard() {
         List<Product> products = List.of(
                 new Product(1, "Product 1", 100, 2),
                 new Product(2, "Product 2", 200, 3)
@@ -53,7 +53,7 @@ public class ReceiptTest {
     }
 
     @Test
-    void testFindTotalAmountWithLargeQuantityDiscount() {
+    void checkFindTotalAmountWithLargeQuantityDiscount() {
         List<Product> products = List.of(
                 new Product(1, "Product 1", 100, 6),
                 new Product(2, "Product 2", 200, 3)
