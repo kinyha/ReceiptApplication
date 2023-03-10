@@ -1,0 +1,3 @@
+cache:
+  implementation: lru # or lru
+  max-size: 3

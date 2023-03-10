@@ -4,17 +4,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NonpositiveArgumentExceptionTest {
+class NonPositiveArgumentExceptionTest {
 
     @Test
-    void testConstructorWithMessage() {
+    void checkConstructorWithMessage() {
         String message = "Value should be positive: ";
         NonpositiveArgumentException ex = new NonpositiveArgumentException(message);
         assertEquals(message, ex.getMessage());
     }
 
     @Test
-    void testConstructorWithMessageAndValue() {
+    void checkConstructorWithMessageAndValue() {
         String message = "Value should be positive: ";
         int value = -5;
         NonpositiveArgumentException ex = new NonpositiveArgumentException(message, value);
@@ -23,27 +23,10 @@ class NonpositiveArgumentExceptionTest {
     }
 
     @Test
-    void testSetValue() {
+    void checkSetValue() {
         NonpositiveArgumentException ex = new NonpositiveArgumentException();
         int value = -5;
         ex.setValue(value);
         assertEquals(value, ex.getValue());
     }
-
-    @Test
-    void testGetMessage() {
-        String message = "Value should be positive: ";
-        int value = -5;
-        NonpositiveArgumentException ex = new NonpositiveArgumentException(message, value);
-        assertEquals(message + value, ex.getMessage());
-    }
-
-    @Test
-    void testGetValue() {
-        int value = -5;
-        NonpositiveArgumentException ex = new NonpositiveArgumentException();
-        ex.setValue(value);
-        assertEquals(value, ex.getValue());
-    }
-
 }
