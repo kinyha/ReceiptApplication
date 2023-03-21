@@ -19,8 +19,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'junit:junit:4.13.1'
-    runtimeOnly 'org.postgresql:postgresql'
+	implementation group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13.2'
+	testImplementation 'junit:junit:4.13.1'
+	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
