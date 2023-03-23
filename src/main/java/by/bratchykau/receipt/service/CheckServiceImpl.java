@@ -52,6 +52,7 @@ public class CheckServiceImpl implements CheckService {
         // output receipt to file
         ReceiptDecorator decorator = new ReceiptDecorator(receipt);
         decorator.outputToFile("src/main/resources/output.txt");
+        decorator.outputToFilePDF("src/main/resources/output.pdf");
         return receipt.toString();
 
     }
